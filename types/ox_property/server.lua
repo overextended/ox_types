@@ -1,8 +1,5 @@
 ---@meta
 
----@class ox_property
-exports.ox_property = {}
-
 ---@class OxPropertyTransactionParty
 ---@field identifier? integer | string
 ---@field name? string

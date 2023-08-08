@@ -1,8 +1,5 @@
 ---@meta
 
----@class ox_property
-exports.ox_property = {}
-
 ---@param componentType string
 ---@param action function
 ---@param actionPermissions string[]
