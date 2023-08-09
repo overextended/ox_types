@@ -18,13 +18,13 @@ function exports.ox_property:getPropertyData(property, componentId) end
 ---@param componentId integer
 ---@param componentType string
 ---@return boolean | integer, string?
-function exports.ox_property:IsPermitted(player, propertyName, componentId, componentType) end
+function exports.ox_property:isPermitted(player, propertyName, componentId, componentType) end
 
 ---@param source number
 ---@param msg string
 ---@param data { amount: number, from: OxPropertyTransactionParty, to: OxPropertyTransactionParty }
 ---@return boolean, string?
-function exports.ox_property:Transaction(source, msg, data) end
+function exports.ox_property:transaction(source, msg, data) end
 
 ---@param data { entity: integer, model: string, seats?: integer }
 function exports.ox_property:clearVehicleOfPassengers(data) end

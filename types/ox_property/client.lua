@@ -7,7 +7,7 @@ function exports.ox_property:registerComponentAction(componentType, action, acti
 
 ---@param menu string | string[]
 ---@param menuType string
-function exports.ox_property:RegisterMenu(menu, menuType) end
+function exports.ox_property:registerMenu(menu, menuType) end
 
 ---@return { property: string, componentId: integer, name: string, type: string }
 function exports.ox_property:getCurrentComponent() end
@@ -24,4 +24,4 @@ function exports.ox_property:isPermitted(property, componentId) end
 
 ---@param data { property: string, componentId: integer }
 ---@return boolean
-function exports.ox_property:heckCurrentZone(data) end
+function exports.ox_property:checkCurrentZone(data) end

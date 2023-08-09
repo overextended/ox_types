@@ -25,7 +25,7 @@ exports.ox_target = {}
 
 ---@class OxTargetSphereZone
 ---@field coords vector3
----@field radiuss? number
+---@field radius? number
 ---@field debug? boolean
 ---@field drawSprite? boolean
 ---@field options OxTargetOption[]
