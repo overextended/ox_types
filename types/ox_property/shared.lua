@@ -6,8 +6,9 @@ exports.ox_property = {}
 ---@class OxPropertyComponent
 ---@field componentId integer
 ---@field name string
----@field type 'stash' | 'management' | 'wardrobe' | 'parking' | string
----@field vehicles? table<string, true>
+---@field type 'stash' | 'management' | 'wardrobe' | 'parking'
+---@field vehicles? table<'automobile' | 'bicycle' | 'bike' | 'blimp' | 'boat' | 'heli' | 'plane' | 'submarine' | 'quadbike' | 'trailer' | 'train', true>
+---@field disableGenerators? true
 ---@field point? vector3
 ---@field sphere? vector3
 ---@field box? vector3
