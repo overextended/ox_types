@@ -61,7 +61,7 @@ function exports.ox_inventory:giveItemToTarget(serverId, slotId, count) end
 
 ---@param search 'slots' | 'count'
 ---@param item string | string[]
----@param metadata string | table<string, any>
+---@param metadata? string | table<string, any>
 function exports.ox_inventory:Search(search, item, metadata) end
 
 ---@return table<number, SlotWithItem>
