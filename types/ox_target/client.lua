@@ -26,7 +26,7 @@ exports.ox_target = {}
 ---@field bones? string | string[]
 ---@field offset? vector3
 ---@field offsetAbsolute? vector3
----@field offsetSize number
+---@field offsetSize? number
 
 ---@class OxTargetSphereZone
 ---@field coords vector3
