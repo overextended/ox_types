@@ -129,7 +129,7 @@ function exports.ox_inventory:AddItem(inv, item, count, metadata, slot, cb) end
 ---@param inv inventory
 ---@param search 'slots' | 'count'
 ---@param item string | string[]
----@param metadata string | table<string, any>
+---@param metadata? string | table<string, any>
 function exports.ox_inventory:Search(inv, search, item, metadata) end
 
 ---@param inv inventory
