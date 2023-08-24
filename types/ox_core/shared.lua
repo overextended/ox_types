@@ -27,3 +27,5 @@
 ---@field price number
 ---@field seats number
 ---@field type string
+
+function Ox.GetVehicleData(filter) end

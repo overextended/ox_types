@@ -14,7 +14,7 @@
 ---@field GetPlayerExports fun(): table
 ---@field GetPlayer fun(playerId: number): OxPlayer?
 ---@field GetPlayerByFilter fun(filter: any): OxPlayer?
----@field GetPlayers fun(usemetatable, filter: any): OxPlayer[]
+---@field GetPlayers fun(filter: any): OxPlayer[]
 ---@field GetPlayerRegistry fun(): table<number, OxPlayerProperties>
 ---@field GetVehicle fun(entityId: number): OxVehicle?
 ---@field GetVehicleFromNetId fun(netId: number): OxVehicle?

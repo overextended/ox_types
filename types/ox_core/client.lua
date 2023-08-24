@@ -6,7 +6,7 @@
 ---@field PlayerExports fun(): table
 Ox = {}
 
----@class OxPlayerClient
+---@class OxPlayerClient : OxPlayerProperties
 ---@field get fun(key: string): any
 ---@field getStatus fun(name: string): number
 ---@field setStatus fun(name: string, value: number): boolean?
