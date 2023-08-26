@@ -4,6 +4,7 @@
 ---@field CallPlayerMethod fun(method: string, ...): any
 ---@field GetPlayerData fun(): table?
 ---@field PlayerExports fun(): table
+Ox = {}
 
 ---@class OxPlayerClient : OxPlayerProperties
 ---@field get fun(key: string): any

@@ -29,6 +29,7 @@
 ---@field CallVehicleMethod fun(method: string, ...): any
 ---@field GeneratePlate fun(): string
 ---@field GenerateVin fun(vehicleModel: string): string
+Ox = {}
 
 ---@class OxPlayerProperties
 ---@field source number
