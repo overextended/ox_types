@@ -7,7 +7,7 @@
 ---@field fivem? string
 ---@field steam? string
 
----@class OxServer
+---@class OxServer : OxShared
 ---@field GetIdentifiers fun(playerId: number): PlayerIdentifiers
 ---@field CallPlayerMethod fun(method: string, ...): any
 ---@field GetPlayerData fun(): table?
@@ -29,18 +29,17 @@
 ---@field CallVehicleMethod fun(method: string, ...): any
 ---@field GeneratePlate fun(): string
 ---@field GenerateVin fun(vehicleModel: string): string
-Ox = {}
 
 ---@class OxPlayerProperties
 ---@field source number
----@field userid number
----@field charid number
----@field stateid string
+---@field userId number
+---@field charId number
+---@field stateId string
 ---@field ped number
 ---@field name string
 ---@field username string
----@field firstname string
----@field lastname string
+---@field firstName string
+---@field lastName string
 
 ---@class OxPlayer : OxPlayerProperties
 ---@field set fun(key: string, value: any, replicated?: boolean)

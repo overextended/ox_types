@@ -1,5 +1,10 @@
 ---@meta
 
+---@class OxShared
+---@field GetTopVehicleStats (fun(): TopVehicleStats) | fun(filter: 'land' | 'air' | 'sea'): VehicleStats
+---@field GetVehicleData (fun(filter?: table): table<string, VehicleData>) | fun(filter: string): VehicleData?
+Ox = {}
+
 ---@class OxGroupProperties
 ---@field name string
 ---@field label string
@@ -27,5 +32,3 @@
 ---@field price number
 ---@field seats number
 ---@field type string
-
-function Ox.GetVehicleData(filter) end
