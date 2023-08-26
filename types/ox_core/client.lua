@@ -13,4 +13,7 @@ Ox = {}
 ---@field addStatus fun(name: string, value: number): boolean?
 ---@field removeStatus fun(name: string, value: number): boolean?
 ---@field groups table<string, number>
+---@field hasGroup fun(filter: string | string[] | table<string, number>): string?, number?
+---@field getCoords fun(): vector3
+---@field [string] any
 player = {}
