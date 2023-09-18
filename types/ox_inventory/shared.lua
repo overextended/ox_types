@@ -64,6 +64,7 @@ exports.ox_inventory = {}
 ---@field description? string
 ---@field stack? boolean
 ---@field close? boolean
+---@field [string] any
 
 ---@class OxClientProps
 ---@field status? table<string, number>
