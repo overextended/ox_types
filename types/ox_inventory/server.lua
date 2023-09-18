@@ -262,3 +262,7 @@ function exports.ox_inventory:Items(itemName) end
 ---@param archetype string
 ---@param data OxShopProperties
 function exports.ox_inventory:RegisterShop(archetype, data) end
+
+---Unloads an inventory. Triggers a save for persistent inventories and deletes temporary ones.
+---@param inv inventory
+function exports.ox_inventory:RemoveInventory(inv) end
