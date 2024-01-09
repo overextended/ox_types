@@ -3,6 +3,8 @@
 ---@class ox_inventory
 exports.ox_inventory = {}
 
+---@alias metadata string | table<string, any>
+
 ---@class OxShopProperties
 ---@field name string
 ---@field label? string
