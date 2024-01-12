@@ -47,16 +47,16 @@ Ox = {}
 ---@field get fun(key?: string): any
 ---@field setGroup fun(name: string, grade?: number)
 ---@field getGroup fun(name: string): number?
----@field getGroups fun(self: self): table<string, number>
+---@field getGroups fun(): table<string, number>
 ---@field hasGroup fun(filter: string | string[] | table<string, number>): string?, number?
 ---@field setStatus fun(name: string, value: number): boolean?
 ---@field addStatus fun(name: string, value: number): boolean?
 ---@field removeStatus fun(name: string, value: number): boolean?
----@field getLicenses fun(self: self): table<string, { issued: string }>
+---@field getLicenses fun(): table<string, { issued: string }>
 ---@field getLicense fun(name: string): { issued: string }
 ---@field addLicense fun(name: string): boolean?
 ---@field removeLicense fun(name: string): boolean?
----@field getPlayersInScope fun(self: self): table<number, true>
+---@field getPlayersInScope fun(): table<number, true>
 ---@field isPlayerInScope fun(playerId: number): boolean
 ---@field triggerScopedEvent fun(eventName: string, ...: any)
 ---@field logout fun(dropped?: boolean)
