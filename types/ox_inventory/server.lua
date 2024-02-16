@@ -192,7 +192,7 @@ function exports.ox_inventory:ConfiscateInventory(playerId) end
 function exports.ox_inventory:ReturnInventory(playerId) end
 
 ---@param playerId number
----@param keep string | string[]
+---@param keep? string | string[]
 function exports.ox_inventory:ClearInventory(playerId, keep) end
 
 ---@param inv inventory
