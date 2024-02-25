@@ -1,88 +1,86 @@
 ---@meta
 
----@class PlayerIdentifiers
----@field license string
----@field license2 string Preferred identifier; should always refer to Rockstar Social Club ID.
----@field discord? string
----@field fivem? string
----@field steam? string
-
----@class OxServer : OxShared
----@field GetIdentifiers fun(playerId: number): PlayerIdentifiers
----@field CallPlayerMethod fun(method: string, ...): any
----@field GetPlayerData fun(): table?
----@field GetPlayerExports fun(): table
----@field GetPlayer fun(playerId: number): OxPlayer?
----@field GetPlayerByFilter fun(filter: any): OxPlayer?
----@field GetPlayers fun(filter: any): OxPlayer[]
----@field GetPlayerRegistry fun(): table<number, OxPlayerProperties>
----@field GetVehicle fun(entityId: number): OxVehicle?
----@field GetVehicleFromNetId fun(netId: number): OxVehicle?
----@field GetVehicleFromVehicleId fun(vehicleId: number): OxVehicle?
----@field GetVehicleRegistry fun(): table<number, OxVehicleProperties>
----@field CreateVehicle fun(data: any, coords: vector3, heading?: number): OxVehicle?
----@field GetVehicles fun(): OxVehicle[]
----@field GetGroup fun(name: string): OxGroupProperties?
----@field GenerateStateId fun(): string
----@field SaveAllPlayers fun()
----@field GetVehicleExports fun(): table
----@field CallVehicleMethod fun(method: string, ...): any
----@field GeneratePlate fun(): string
----@field GenerateVin fun(vehicleModel: string): string
+---@class OxServer : OxCommon
+---@field GetPlayer fun(playerId: string | number): OxPlayerServer?
+---@field GetPlayerFromUserId fun(userId: number): OxPlayerServer?
+---@field GetPlayerFromFilter fun(filter: table<string, any>): OxPlayerServer?
+---@field GetPlayers fun(filter: table<string, any>): table<string, OxPlayerServer>
+---@field GetVehicle fun(entityId: number): OxVehicleServer?
+---@field GetVehicleFromNetId fun(netId: number): OxVehicleServer?
+---@field GetVehicleFromVin fun(vin: string): OxVehicleServer?
+---@field CreateVehicle async fun(data: CreateVehicleData, coords?: vector3, heading?: number): OxVehicleServer?
+---@field SpawnVehicle async fun(dbId: number, coords?: vector3, heading?: number): OxVehicleServer?
+---@field GetAccountById async fun(id: string | number): OxAccount?
+---@field GetCharacterAccount async fun(id: string | number): OxAccount?
+---@field GetGroupAccount async fun(group: string): OxAccount?
+---@field GetCharacterAccounts async fun(id: string | number, includeAll?: boolean): OxAccount[]
+---@field GetGroupAccounts async fun(group: string): OxAccount[]
+---@field AddAccountBalance async fun(id: number, amount: number): boolean
+---@field RemoveAccountBalance async fun(id: number, amount: number, overdraw?: boolean): boolean
+---@field TransferAccountBalance async fun(fromAccountId: number, toAccountId: number, amount: number, overdraw?: boolean): boolean
+---@field CreateAccount async fun(charId: number, label: string, shared?: boolean): number
+---@field CreateGroupAccount async fun(group: string, label: string, shared?: boolean): number
+---@field DeleteAccount async fun(accountId: number): number
+---@field GetAccountRole async fun(accountId: number, id: string | number): string
+---@field DepositMoney async fun(playerId: number, accountId: number, amount: number): boolean
+---@field WithdrawMoney async fun(playerId: number, accountId: number, amount: number): boolean
+---@field SetAccountAccess async fun(accountId: number, id: string | number, role: string): number
+---@field RemoveAccountAccess async fun(accountId: number, id: string | number): number
+---@field SaveAllPlayers fun(kickWithReason?: string)
+---@field SaveAllVehicles fun(resource?: string)
+---@field GetCharIdFromStateId async fun(stateId: string): number
 Ox = {}
 
----@class OxPlayerProperties
+---@class OxPlayerServer : OxPlayer
 ---@field source number
----@field userId number
----@field charId number
----@field stateId string
----@field ped number
----@field name string
 ---@field username string
----@field firstName string
----@field lastName string
-
----@class OxPlayer : OxPlayerProperties
+---@field identifier  string
+---@field ped number
 ---@field set fun(key: string, value: any, replicated?: boolean)
----@field get fun(key?: string): any
----@field setGroup fun(name: string, grade?: number)
----@field getGroup fun(name: string): number?
----@field getGroups fun(self: self): table<string, number>
----@field hasGroup fun(filter: string | string[] | table<string, number>): string?, number?
----@field setStatus fun(name: string, value: number): boolean?
----@field addStatus fun(name: string, value: number): boolean?
----@field removeStatus fun(name: string, value: number): boolean?
----@field getLicenses fun(self: self): table<string, { issued: string }>
----@field getLicense fun(name: string): { issued: string }
----@field addLicense fun(name: string): boolean?
----@field removeLicense fun(name: string): boolean?
----@field getPlayersInScope fun(self: self): table<number, true>
----@field isPlayerInScope fun(playerId: number): boolean
----@field triggerScopedEvent fun(eventName: string, ...: any)
----@field logout fun(dropped?: boolean)
----@field getState fun(): StateBag
----@field getCoords fun(): vector3
+---@field getPlayersInScope fun(): table<string, true>
+---@field isPlayerInScope fun(targetId: number): boolean
+---@field triggerScopedEvent fun(eventName: string, ...)
+---@field getAccount async fun(): OxAccount
+---@field getAccounts async fun(getShared?: boolean): OxAccount[]
+---@field setGroup async fun(name: string, grade?: number)
+---@field getStatuses fun(): table<string, number>
+---@field getLicense fun(name: string): table<string, any>
+---@field getLicenses fun(): table<string, table<string, any>>
+---@field addLicense async fun(name: string): boolean
+---@field removeLicense async fun(name: string): boolean
+---@field save fun()
+---@field setAsJoined async fun(newId?: number | string)
+---@field logout async fun(dropped?: boolean)
+---@field createCharacter async fun(data: NewCharacter)
+---@field setActiveCharacter async fun(data: number)
+---@field deleteCharacter async fun(charId: number): boolean
 
----@class OxVehicleProperties
----@field id number
+---@class CreateVehicleData
+---@field model string
 ---@field owner? number
 ---@field group? string
----@field netid number
----@field entity number
----@field model string
----@field plate string
----@field vin? string
----@field script string
 ---@field stored? string
+---@field properties? VehicleProperties
 
----@class OxVehicle : OxVehicleProperties
----@field getCoords fun(): vector3
----@field get fun(key?: string): any
+---@class OxVehicleServer
+---@field entity number
+---@field netId number
+---@field script string
+---@field plate string
+---@field model string
+---@field make string
+---@field id? number
+---@field vin? string
+---@field owner? number
+---@field group? string
 ---@field set fun(key: string, value: any)
+---@field get fun(key: string): any
+---@field getCoords fun(): vector3
 ---@field getState fun(): StateBag
----@field despawn fun()
+---@field save fun()
+---@field despawn fun(save?: boolean)
 ---@field delete fun()
----@field setStored fun(value: string, despawn?: boolean)
----@field setOwner fun(newOwner?: number)
----@field setGroup fun(newGroup?: string)
+---@field setStored fun(value?: string, despawn?: boolean)
+---@field setOwner fun(charId?: number)
+---@field setGroup fun(group?: string)
 ---@field setPlate fun(plate: string)
