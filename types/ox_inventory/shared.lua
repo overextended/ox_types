@@ -75,10 +75,12 @@ exports.ox_inventory = {}
 ---@field useWhileDead? boolean
 ---@field canCancel? boolean
 ---@field disable? { move?: boolean, car?: boolean, combat?: boolean, mouse?: boolean }
----@field export string
+---@field export? string
+---@field component? number[]
 ---@field [string] any
 
 ---@class OxClientItem : OxItem
+---@field count number
 ---@field client? OxClientProps
 
 ---@class OxServerItem : OxItem

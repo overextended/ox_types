@@ -23,9 +23,11 @@
 ---@field containerSlot? number
 ---@field player? { source: number, ped: number, groups: table, name?: string, sex?: string, dateofbirth?: string, [string]: any }
 ---@field netid? number
+---@field entityId? number
 ---@field distance? number
 ---@field openedBy { [number]: true }
 ---@field currentShop? string
+---@field usingItem? SlotWithItem
 
 ---@alias inventory OxInventory | { id: string | number, owner?: boolean | string | number } | string | number
 
