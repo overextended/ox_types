@@ -104,6 +104,20 @@ local VehicleClasses = {
 ---@field addStatus fun(name: string, value: number): boolean
 ---@field removeStatus fun(name: string, value: number): boolean
 
+---@class Character
+---@field charId number
+---@field stateId string
+---@field firstName string
+---@field lastName string
+---@field x? number
+---@field y? number
+---@field z? number
+---@field heading? number
+---@field lastPlayed? string
+---@field health? number
+---@field armour? number
+---@field isNew? boolean
+
 ---@class NewCharacter
 ---@field firstName string
 ---@field lastName string
