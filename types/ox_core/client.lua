@@ -4,11 +4,8 @@
 ---@field [string] fun(...): any
 Ox = {}
 
----@class OxPlayerClient
+---@class OxPlayerClient : OxPlayer
 ---@field public state StateBag
----@field public userId number
----@field public charId number?
----@field public stateId string?
 player = {}
 
 ---**`client`**

@@ -90,19 +90,9 @@ local VehicleClasses = {
 ---@field principal string
 
 ---@class OxPlayer
----@field [string] any
----@field userId number
----@field charId? number
----@field stateId? string
----@field get fun(key: string): any
----@field getState fun(): StateBag
----@field getGroup (fun(filter: string): number) | (fun(filter: string[]): string, number) | (fun(filter: table<string, number>): table<string, number>)
----@field getGroups fun(): table<string, number>
----@field getCoords fun(): vector3
----@field getStatus fun(name: string): number
----@field setStatus fun(name: string, value: number): boolean
----@field addStatus fun(name: string, value: number): boolean
----@field removeStatus fun(name: string, value: number): boolean
+---@field public userId number
+---@field public charId number?
+---@field public stateId string?
 
 ---@class NewCharacter
 ---@field firstName string

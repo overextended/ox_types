@@ -68,13 +68,10 @@ Ox = {}
 
 
 
----@class OxPlayerServer
----@field public charId number
+---@class OxPlayerServer : OxPlayer
 ---@field public identifier string
 ---@field public ped number
 ---@field public source number
----@field public stateId string
----@field public userId number
 ---@field public username string
 player = {}
 
