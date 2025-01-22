@@ -38,29 +38,6 @@ Ox = {}
 ---@field stored? string
 ---@field properties? VehicleProperties
 
----@class OxVehicleServer
----@field entity number
----@field netId number
----@field script string
----@field plate string
----@field model string
----@field make string
----@field id? number
----@field vin? string
----@field owner? number
----@field group? string
----@field set fun(key: string, value: any)
----@field get fun(key: string): any
----@field getCoords fun(): vector3
----@field getState fun(): StateBag
----@field save fun()
----@field despawn fun(save?: boolean)
----@field delete fun()
----@field setStored fun(value?: string, despawn?: boolean)
----@field setOwner fun(charId?: number)
----@field setGroup fun(group?: string)
----@field setPlate fun(plate: string)
-
 
 
 
