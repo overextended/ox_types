@@ -77,5 +77,3 @@ function player.removeStatus(player, statusName, value) end
 ---@param cb fun(data: any) # callback receiving new value of `key`
 ---@return any data         # new value of `key`
 function player.on(player, key, cb) end
-
-return player
