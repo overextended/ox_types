@@ -73,6 +73,8 @@ local VehicleClasses = {
 ---@field default number
 ---@field onTick number
 
+---@alias OxAccountRole  'viewer' | 'contributor' | 'manager' | 'owner'
+
 ---@class OxAccount
 ---@field id number
 ---@field balance number
@@ -81,13 +83,16 @@ local VehicleClasses = {
 ---@field owner? number
 ---@field group? string
 ---@field type 'personal' | 'shared' | 'group'
----@field role 'contributor' | 'manager' | 'owner'
+---@field role OxAccountRole
+
 
 ---@class OxGroup
 ---@field name string
 ---@field label string
----@field grades string[]
----@field principal string
+---@field accountRoles OxAccountRole
+---@field type string?
+---@field colour number?
+---@field hasAccount boolean
 
 ---@class OxPlayer
 ---@field public userId number
@@ -99,3 +104,10 @@ local VehicleClasses = {
 ---@field lastName string
 ---@field gender string
 ---@field date number
+
+
+-- new stuff
+
+---@class OxLicense
+---@field name string?
+---@field label string?

@@ -1,3 +1,5 @@
+---@meta
+
 ---@class OxVehicleServer
 ---@field public entity number
 ---@field public make string
