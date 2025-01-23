@@ -1,9 +1,5 @@
 ---@meta
 
----@class OxClient : OxCommon
----@field [string] fun(...): any
-Ox = {}
-
 ---@class OxPlayerClient : OxPlayer
 ---@field public state StateBag
 player = {}
