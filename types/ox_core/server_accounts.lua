@@ -1,3 +1,5 @@
+---@meta
+
 ---@alias CommonMessage
 ---| "amount_not_number"
 ---| "no_balance"
@@ -40,8 +42,7 @@ function account.removeBalance(data) end
 ---   message?: string,
 ---   overdraw?: boolean,
 ---   note?: string,
----   actorId?: number
----}
+---   actorId?: number}
 ---@return CommonResult
 function account.transferBalance(data) end
 
@@ -92,7 +93,6 @@ function account.setShared() end
 ---   toAccount: number,
 ---   amount: number,
 ---   message: string,
----   dueDate: string
---- }
+---   dueDate: string }
 ---@return CommonResult
 function account.createInvoice(invoice) end
