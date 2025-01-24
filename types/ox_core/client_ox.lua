@@ -4,5 +4,5 @@
 Ox = {}
 
 ---**`client`**
----@return OxPlayerClient?
+---@return OxPlayerClient
 function Ox.GetPlayer() end
