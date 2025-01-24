@@ -15,27 +15,26 @@
 ---@field success boolean
 ---@field message CommonMessage
 
-
 ---@class OxAccountServer
 ---@field public accountId number
 account = {}
 
----**server**
+---**`server`**
 ---@param key string | string[]
 ---@return any
 function account.get(key) end
 
----**server**
+---**`server`**
 ---@param data { amount: number, message?: string }
 ---@return CommonResult
 function account.addBalance(data) end
 
----**server**
+---**`server`**
 ---@param data { amount: number, message?: string, overdraw?: boolean }
 ---@return CommonResult
 function account.removeBalance(data) end
 
----**server**
+---**`server`**
 ---@param data {
 ---   toId: number,
 ---   amount: number,
@@ -46,7 +45,7 @@ function account.removeBalance(data) end
 ---@return CommonResult
 function account.transferBalance(data) end
 
----**server**
+---**`server`**
 ---@param playerId number
 ---@param amount number
 ---@param message? string
@@ -54,7 +53,7 @@ function account.transferBalance(data) end
 ---@return CommonResult
 function account.depositMoney(playerId, amount, message, note) end
 
----**server**
+---**`server`**
 ---@param playerId number
 ---@param amount number
 ---@param message? string
@@ -62,32 +61,32 @@ function account.depositMoney(playerId, amount, message, note) end
 ---@return CommonResult
 function account.withdrawMoney(playerId, amount, message, note) end
 
----**server**
+---**`server`**
 ---@return CommonResult
 function account.deleteAccount() end
 
----**server**
+---**`server`**
 ---@param id number | string
 ---@return string
 function account.getCharacterRole(id) end
 
----**server**
+---**`server`**
 ---@param id number | string
 ---@param role? string
 ---@return CommonResult
 function account.setCharacterRole(id, role) end
 
----**server**
+---**`server`**
 ---@param playerId number
 ---@param permission string
 ---@return boolean
 function account.playerHasPermission(playerId, permission) end
 
----**server**
+---**`server`**
 ---@return CommonResult
 function account.setShared() end
 
----**server**
+---**`server`**
 ---@param invoice {
 ---   actorId?: number,
 ---   toAccount: number,

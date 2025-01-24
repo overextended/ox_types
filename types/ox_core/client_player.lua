@@ -57,5 +57,5 @@ function player.removeStatus(statusName, value) end
 ---**`client`**
 ---@param key string
 ---@param cb fun(data: any) # callback receiving new value of `key`
----@return any data         # new value of `key`
+---@return any data # new value of `key`
 function player.on(key, cb) end

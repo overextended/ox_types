@@ -1,27 +1,26 @@
 ---@meta
 
-
 ---@alias OxGroupPermissions table<string, table<string, boolean>>
 
 ---@class OxCommon
 Ox = {}
 
----**common**
+---**`common`**
 ---@param groupName string
 ---@return OxGroupPermissions
 function Ox.GetGroupPermissions(groupName) end
 
----**common**
+---**`common`**
 ---@param category? string
 ---@return VehicleStats | table<string, VehicleStats>
 function Ox.GetTopVehicleStats(category) end
 
----**common**
+---**`common`**
 ---@param filter? string | string[]
 ---@return table<string, VehicleData> | VehicleData
 function Ox.GetVehicleData(filter) end
 
----**common**
+---**`common`**
 ---@param modelName string
 ---@return string
 function Ox.GetVehicleNetworkType(modelName) end
@@ -112,7 +111,6 @@ local VehicleClasses = {
 ---@field public userId number
 ---@field public charId number?
 ---@field public stateId string?
-
 
 ---@class OxLicense
 ---@field name string?

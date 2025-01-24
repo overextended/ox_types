@@ -12,66 +12,66 @@
 ---@field public vin? string
 vehicle = {}
 
----**server**
+---**`server`**
 function vehicle.delete() end
 
----**server**
+---**`server`**
 ---@param save boolean?
 function vehicle.despawn(save) end
 
----**server**
+---**`server`**
 ---@param key string
 ---@return any
 function vehicle.get(key) end
 
----**server**
+---**`server`**
 ---@return vector3
 function vehicle.getCoords() end
 
----**server**
+---**`server`**
 ---@return VehicleProperties
 function vehicle.getProperties() end
 
----**server**
+---**`server`**
 ---@return StateBag
 function vehicle.getState() end
 
----**server**
+---**`server`**
 ---@return string?
 function vehicle.getStored() end
 
----**server**
+---**`server`**
 ---@param coords? vector3
 ---@param rotation? vector3
 function vehicle.respawn(coords, rotation) end
 
----**server**
+---**`server`**
 ---@return number
 function vehicle.save() end
 
----**server**
+---**`server`**
 ---@param key string
 ---@param value any
 function vehicle.set(key, value) end
 
----**server**
+---**`server`**
 ---@param groupName? string
 function vehicle.setGroup(groupName) end
 
----**server**
+---**`server`**
 ---@param charId? number
 function vehicle.setOwner(charId) end
 
----**server**
+---**`server`**
 ---@param plate string
 function vehicle.setPlate(plate) end
 
----**server**
+---**`server`**
 ---@param properties VehicleProperties
 ---@param apply boolean?
 function vehicle.setProperties(properties, apply) end
 
----**server**
+---**`server`**
 ---@param value? string
 ---@param despawn? boolean
 function vehicle.setStored(value, despawn) end
