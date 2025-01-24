@@ -88,6 +88,10 @@ function player.getStatus(statusName) end
 function player.getStatuses() end
 
 ---**`server`**
+---@return StateBag
+function player.getState() end
+
+---**`server`**
 ---@param permission string
 ---@return boolean
 function player.hasPermission(permission) end
