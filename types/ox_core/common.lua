@@ -103,7 +103,7 @@ local VehicleClasses = {
 ---@class OxGroup
 ---@field name string
 ---@field label string
----@field accountRoles OxAccountRole
+---@field grades {label: string, accountRole: OxAccountRole}[]
 ---@field type string?
 ---@field colour number?
 ---@field hasAccount boolean
