@@ -1,9 +1,29 @@
 ---@meta
 
+---@alias OxGroupPermissions table<string, table<string, boolean>>
+
 ---@class OxCommon
----@field GetTopVehicleStats (fun(): TopVehicleStats) | (fun(category: VehicleCategories): VehicleStats)
----@field GetVehicleData (fun(): table<string, VehicleData>) | (fun(model: string): VehicleData) | (fun(models: string[]): table<string, VehicleData>)
 Ox = {}
+
+---**`common`**
+---@param groupName string
+---@return OxGroupPermissions
+function Ox.GetGroupPermissions(groupName) end
+
+---**`common`**
+---@param category? string
+---@return VehicleStats | table<string, VehicleStats>
+function Ox.GetTopVehicleStats(category) end
+
+---**`common`**
+---@param filter? string | string[]
+---@return table<string, VehicleData> | VehicleData
+function Ox.GetVehicleData(filter) end
+
+---**`common`**
+---@param modelName string
+---@return string
+function Ox.GetVehicleNetworkType(modelName) end
 
 ---@alias VehicleCategories 'air' | 'land' | 'sea';
 ---@alias TopVehicleStats table<VehicleCategories, VehicleStats>
@@ -68,10 +88,7 @@ local VehicleClasses = {
 ---@field type VehicleTypes;
 ---@field weapons? true;
 
----@class OxStatus
----@field name string
----@field default number
----@field onTick number
+---@alias OxAccountRole  'viewer' | 'contributor' | 'manager' | 'owner'
 
 ---@class OxAccount
 ---@field id number
@@ -81,31 +98,20 @@ local VehicleClasses = {
 ---@field owner? number
 ---@field group? string
 ---@field type 'personal' | 'shared' | 'group'
----@field role 'contributor' | 'manager' | 'owner'
 
 ---@class OxGroup
 ---@field name string
 ---@field label string
----@field grades string[]
----@field principal string
+---@field grades {label: string, accountRole: OxAccountRole}[]
+---@field type string?
+---@field colour number?
+---@field hasAccount boolean
 
 ---@class OxPlayer
----@field [string] any
----@field userId number
----@field charId? number
----@field stateId? string
----@field get fun(key: string): any
----@field getState fun(): StateBag
----@field getGroup (fun(filter: string): number) | (fun(filter: string[]): string, number) | (fun(filter: table<string, number>): table<string, number>)
----@field getGroups fun(): table<string, number>
----@field getCoords fun(): vector3
----@field getStatus fun(name: string): number
----@field setStatus fun(name: string, value: number): boolean
----@field addStatus fun(name: string, value: number): boolean
----@field removeStatus fun(name: string, value: number): boolean
+---@field public userId number
+---@field public charId number?
+---@field public stateId string?
 
----@class NewCharacter
----@field firstName string
----@field lastName string
----@field gender string
----@field date number
+---@class OxLicense
+---@field name string?
+---@field label string?
