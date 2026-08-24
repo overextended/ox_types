@@ -79,6 +79,12 @@ function exports.ox_inventory:removeHooks(id) end
 function exports.ox_inventory:GetInventory(inv, owner) end
 
 ---**`server`**
+---@param invType string
+---@param detailed? boolean Return the full inventory instead of only the ID
+---@return (string|number)[] | OxInventory[]
+function exports.ox_inventory:GetInventories(invType, detailed) end
+
+---**`server`**
 ---@param inv inventory
 ---@param owner? string | number
 ---@return table<number, SlotWithItem>?
