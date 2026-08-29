@@ -63,7 +63,7 @@ function exports.ox_inventory:ConvertItems(playerId, items) end
 
 ---**`server`**
 ---@param event string
----@param cb function
+---@param cb? function
 ---@param options? table
 ---@return number
 function exports.ox_inventory:registerHook(event, cb, options) end
